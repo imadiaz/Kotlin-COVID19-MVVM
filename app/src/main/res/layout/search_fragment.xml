@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchFragment">
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+          <androidx.appcompat.widget.SearchView
+              android:id="@+id/search_view"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              />
+
+          <ProgressBar
+              android:id="@+id/progress_bar"
+              style="?android:attr/progressBarStyle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:visibility="gone" />
+          <LinearLayout
+              android:id="@+id/linear_layout_status"
+              android:visibility="gone"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="15dp"
+              >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <TextView
+                    android:id="@+id/text_view_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/empty"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="See more dates"
+                    android:padding="2dp"
+                    android:textSize="10dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+              <com.google.android.material.card.MaterialCardView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:weightSum="3"
+                      android:baselineAligned="false">
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                          <ImageView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:contentDescription="@string/empty"
+                              android:src="@drawable/ic_info" />
+                          <TextView
+                              android:id="@+id/text_view_infected"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:text="@string/empty"
+                              android:textSize="22sp"
+                              android:textAlignment="center"
+                              />
+                          <TextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:text="@string/text_infected"
+                              android:textSize="15sp"
+                              android:textAlignment="center"
+                              />
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                          <ImageView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:contentDescription="@string/empty"
+                              android:src="@drawable/ic_info_red" />
+                          <TextView
+                              android:id="@+id/text_view_deaths"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:textSize="22sp"
+                              android:text="@string/empty"
+                              android:textAlignment="center"
+                              />
+                          <TextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:text="@string/text_deaths"
+                              android:textSize="15sp"
+                              android:textAlignment="center"
+                              />
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                          <ImageView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:contentDescription="@string/empty"
+                              android:src="@drawable/ic_info_green" />
+                          <TextView
+                              android:id="@+id/text_view_recovered"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:textSize="22sp"
+                              android:text="@string/empty"
+                              android:textAlignment="center"
+                              />
+                          <TextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:text="@string/text_recovered"
+                              android:textSize="15sp"
+                              android:textAlignment="center"
+                              />
+                      </LinearLayout>
+                  </LinearLayout>
+              </com.google.android.material.card.MaterialCardView>
+
+          </LinearLayout>
+          <TextView
+              android:id="@+id/text_view_search_about"
+              android:layout_marginLeft="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/text_about"
+              />
+          <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:src="@drawable/map"
+              android:contentDescription="@string/empty"
+              android:layout_marginTop="25dp"
+              />
+
+      </LinearLayout>
+
+
+
+
+</FrameLayout>

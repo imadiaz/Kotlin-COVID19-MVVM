@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="empty"></string>
+    <string name="text_global_summary">Global Summary</string>
+    <string name="text_symptoms">Symptoms</string>
+    <string name="text_headache">Headache</string>
+    <string name="text_cough">Cough</string>
+    <string name="text_fever">Fever</string>
+
+    <string name="text_prevention">Prevention</string>
+    <string name="text_wear_mask"> Wear face mask</string>
+   <string name="text_wear_mask_description">Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks,and anyone caught without one risks becoming a social pariah</string>
+    <string name="text_wash_hands">Wash your hands</string>
+    <string name="text_wash_hands_description">These diseases include gastrointestinal infections,such as Salmonella and respiratory infections, such as influenza</string>
+    <string name="text_infected">Infected</string>
+    <string name="text_deaths">Deaths</string>
+    <string name="text_recovered">Recovered</string>
+
+    <string name="text_about">Search a country to see the new cases,deaths and recovered</string>
+
+</resources>
