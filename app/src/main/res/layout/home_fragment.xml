@@ -6,253 +6,377 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
-
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
+    <RelativeLayout android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:background="@drawable/home_background_image"
+        >
+        <TextView
+            android:id="@+id/text_title_app"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:text="COVID 19"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:layout_marginBottom="150dp"
+            />
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                />
+        <ScrollView
+            android:layout_below="@id/text_title_app"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <GridLayout
+            android:id="@+id/grid_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="7"
+            android:columnCount="1"
+            android:visibility="gone"
+            >
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Global summary"
+                            android:textSize="20sp"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                         />
+            </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:textAlignment="center"
-        />
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
 
-    <LinearLayout
-        android:id="@+id/linear_layout_main"
-        android:visibility="invisible"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/text_global_summary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-         />
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
+                    <LinearLayout
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:baselineAligned="false">
+                        <LinearLayout
+                        android:layout_width="0dp"
+                            android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/empty"
+                                android:src="@drawable/ic_info" />
+                            <TextView
+                                android:id="@+id/text_view_infected"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/empty"
+                                android:textSize="22sp"
+                                android:textAlignment="center"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_infected"
+                                android:textSize="15sp"
+                                android:textAlignment="center"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/empty"
+                                android:src="@drawable/ic_info_red" />
+                            <TextView
+                                android:id="@+id/text_view_deaths"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="22sp"
+                                android:text="@string/empty"
+                                android:textAlignment="center"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_deaths"
+                                android:textSize="15sp"
+                                android:textAlignment="center"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/empty"
+                                android:src="@drawable/ic_info_green" />
+                            <TextView
+                                android:id="@+id/text_view_recovered"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="22sp"
+                                android:text="@string/empty"
+                                android:textAlignment="center"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_recovered"
+                                android:textSize="15sp"
+                                android:textAlignment="center"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_symptoms"
+                            android:textSize="20sp"
+                            android:layout_margin="5dp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                       app:cardElevation="3dp"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:contentDescription="@string/empty"
+                                android:src="@drawable/headache" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_headache"
+                                android:textAlignment="center"
+                                />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:contentDescription="@string/empty"
+                                android:src="@drawable/caugh" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_cough"
+                                android:textAlignment="center"
+                                />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:contentDescription="@string/empty"
+                                android:src="@drawable/fever" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_fever"
+                                android:textAlignment="center"
+                                />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_prevention"
+                    android:textSize="20sp"
+                    android:layout_margin="5dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:baselineAligned="false">
-                <LinearLayout
-                android:layout_width="0dp"
-                    android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/ic_info" />
-                    <TextView
-                        android:id="@+id/text_view_infected"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/empty"
-                        android:textSize="22sp"
-                        android:textAlignment="center"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_infected"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/ic_info_red" />
-                    <TextView
-                        android:id="@+id/text_view_deaths"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="22sp"
-                        android:text="@string/empty"
-                        android:textAlignment="center"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_deaths"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/ic_info_green" />
-                    <TextView
-                        android:id="@+id/text_view_recovered"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="22sp"
-                        android:text="@string/empty"
-                        android:textAlignment="center"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_recovered"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_symptoms"
-            android:textSize="20sp"
-            android:layout_margin="5dp"
-            android:textStyle="bold" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:weightSum="3"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:elevation="30dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
                 >
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/headache" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_headache"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:elevation="30dp"
-                app:cardCornerRadius="20dp"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/caugh" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_cough"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:elevation="30dp"
-                app:cardCornerRadius="20dp"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/fever" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_fever"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/text_prevention"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:textStyle="bold" />
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="30dp"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="20dp"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
                     android:weightSum="2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
                     <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/empty"
+                        android:src="@drawable/wash_hands" />
+                  <LinearLayout
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content">
+                                              <TextView
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:text="@string/text_wash_hands"
+                                                  android:textSize="22sp"
+                                                  android:textStyle="bold"
+                                                  android:layout_marginBottom="10dp"
+                                                  />
+                                              <TextView
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:text="@string/text_wash_hands_description"
+                                                  />
+                  </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="6"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                >
+                <LinearLayout
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:contentDescription="@string/empty"
                         android:src="@drawable/wear_mask" />
                     <LinearLayout
-                        android:layout_width="0dp"
                         android:orientation="vertical"
+                        android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content">
                         <TextView
@@ -261,6 +385,7 @@
                             android:text="@string/text_wear_mask"
                             android:textSize="22sp"
                             android:textStyle="bold"
+                            android:layout_marginBottom="10dp"
                             />
                         <TextView
                             android:layout_width="match_parent"
@@ -269,52 +394,319 @@
                             />
                     </LinearLayout>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="30dp"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="20dp"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:weightSum="2"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+        </ScrollView>
+    </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/wash_hands" />
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_wash_hands"
-                            android:textSize="22sp"
-                            android:textStyle="bold"
-                            />
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_wash_hands_description"
-                            />
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                />
-        </LinearLayout>
-    </LinearLayout>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progress_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="visible"-->
+<!--        android:textAlignment="center"-->
+<!--        />-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linear_layout_main"-->
+<!--        android:visibility="invisible"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:text="@string/text_global_summary"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--         />-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="3"-->
+<!--                android:baselineAligned="false">-->
+<!--                <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/ic_info" />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/text_view_infected"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/empty"-->
+<!--                        android:textSize="22sp"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/text_infected"-->
+<!--                        android:textSize="15sp"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/ic_info_red" />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/text_view_deaths"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="22sp"-->
+<!--                        android:text="@string/empty"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/text_deaths"-->
+<!--                        android:textSize="15sp"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/ic_info_green" />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/text_view_recovered"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="22sp"-->
+<!--                        android:text="@string/empty"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/text_recovered"-->
+<!--                        android:textSize="15sp"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/text_symptoms"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:textStyle="bold" />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:weightSum="3"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            >-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:elevation="30dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                >-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="150dp"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/headache" />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/text_headache"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:elevation="30dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                >-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="150dp"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/caugh" />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/text_cough"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:elevation="30dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                >-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="150dp"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/fever" />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/text_fever"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+
+<!--        </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/text_prevention"-->
+<!--                android:textSize="20sp"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:textStyle="bold" />-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:elevation="30dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                android:layout_margin="20dp"-->
+<!--                >-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/wear_mask" />-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_height="wrap_content">-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/text_wear_mask"-->
+<!--                            android:textSize="22sp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            />-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/text_wear_mask_description"-->
+<!--                            />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:elevation="30dp"-->
+<!--                android:layout_margin="20dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                >-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:contentDescription="@string/empty"-->
+<!--                        android:src="@drawable/wash_hands" />-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_height="wrap_content">-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/text_wash_hands"-->
+<!--                            android:textSize="22sp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            />-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/text_wash_hands_description"-->
+<!--                            />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
 </FrameLayout>

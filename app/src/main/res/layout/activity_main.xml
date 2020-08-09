@@ -6,62 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+            <fragment
+                app:defaultNavHost="true"
+                android:id="@+id/content_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navGraph="@navigation/navigation"
+                android:name="androidx.navigation.fragment.NavHostFragment"
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:id="@+id/scroll_view"
-        >
-        <fragment
-            app:defaultNavHost="true"
-            android:id="@+id/content_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:navGraph="@navigation/navigation"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-
-            />
-    </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        android:backgroundTint="@color/colorPrimaryDark"
-        app:liftOnScroll="true"
-
-        >
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+                />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:expandedTitleGravity="bottom"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="?attr/colorPrimaryDark"
-            app:scrimAnimationDuration="300"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/wallpaper"
-                android:scaleType="centerCrop"
-                app:layout_collapseParallaxMultiplier="0.7"
-                />
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/main_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                />
+            app:menu="@menu/bottom_menu"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            />
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+<!--        android:id="@+id/scroll_view"-->
+<!--        >-->
+<!--        <fragment-->
+<!--            app:defaultNavHost="true"-->
+<!--            android:id="@+id/content_fragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:navGraph="@navigation/navigation"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_menu"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        />
+<!--            />-->
+<!--    </androidx.core.widget.NestedScrollView>-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
+<!--        android:backgroundTint="@color/colorPrimaryDark"-->
+<!--        app:liftOnScroll="true"-->
+
+<!--        >-->
+<!--        <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:expandedTitleGravity="bottom"-->
+<!--            app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+<!--            app:contentScrim="?attr/colorPrimaryDark"-->
+<!--            app:scrimAnimationDuration="300"-->
+<!--            >-->
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                android:src="@drawable/wallpaper"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:layout_collapseParallaxMultiplier="0.7"-->
+<!--                />-->
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/main_toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                app:layout_collapseMode="pin"-->
+<!--                />-->
+
+<!--        </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_navigation_menu"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:menu="@menu/bottom_menu"-->
+<!--        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"-->
+<!--        />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

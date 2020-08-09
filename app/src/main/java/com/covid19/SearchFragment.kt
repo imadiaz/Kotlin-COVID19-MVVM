@@ -12,6 +12,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.cardview.widget.CardView
 import androidx.core.view.isVisible
 import com.covid19.data.repository.APIRepository
 import com.covid19.data.repository.CountryStatus
@@ -92,7 +93,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun handleShowLinearLayout(){
-    val content = view?.findViewById<LinearLayout>(R.id.linear_layout_status)
+    val content = view?.findViewById<CardView>(R.id.card_layout_status)
         if(content!!.isVisible){
             content?.visibility = View.GONE
         }else{
@@ -102,7 +103,7 @@ class SearchFragment : Fragment() {
 
     private fun handleShowOrHide(){
         val progressBar = view?.findViewById<ProgressBar>(R.id.progress_bar)
-        val content = view?.findViewById<LinearLayout>(R.id.linear_layout_status)
+        val content = view?.findViewById<CardView>(R.id.card_layout_status)
         Log.e("TAG","Entro al handlew ${progressBar!!.isVisible}");
         if(progressBar!!.isVisible){
             progressBar.visibility = View.GONE

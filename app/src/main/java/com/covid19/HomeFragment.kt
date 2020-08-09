@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -70,7 +71,7 @@ class HomeFragment : Fragment() {
 
     private fun handleProgressBar(){
         val progressBar = view?.findViewById<ProgressBar>(R.id.progress_bar)
-        val content = view?.findViewById<LinearLayout>(R.id.linear_layout_main)
+        val content = view?.findViewById<GridLayout>(R.id.grid_layout_main)
         if(progressBar!!.isVisible){
             progressBar.visibility = View.GONE
             content?.visibility=View.VISIBLE
